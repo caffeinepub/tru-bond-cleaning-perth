@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Tru Bond Cleaning — Clean, trustworthy teal-based palette */
+    /* Primary: Teal (0d9488) */
+    --primary: 0.6 0.12 185;
+    --primary-foreground: 0.99 0 0;
+
+    /* Secondary: Deep blue (1e40af) */
+    --secondary: 0.38 0.13 264;
+    --secondary-foreground: 0.99 0 0;
+
+    /* Background: Clean white */
+    --background: 0.99 0 0;
+    --foreground: 0.15 0.015 260;
+
+    /* Card: Slightly off-white with a cool tint */
+    --card: 0.97 0.005 200;
+    --card-foreground: 0.15 0.015 260;
+
+    /* Muted: Light grey */
+    --muted: 0.94 0.005 200;
+    --muted-foreground: 0.45 0.015 260;
+
+    /* Accent: Bright teal tint */
+    --accent: 0.91 0.04 185;
+    --accent-foreground: 0.15 0.08 185;
+
+    /* Popover */
+    --popover: 0.99 0 0;
+    --popover-foreground: 0.15 0.015 260;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Border and input */
+    --border: 0.88 0.01 200;
+    --input: 0.88 0.01 200;
+    --ring: 0.6 0.12 185;
+
+    /* Charts */
+    --chart-1: 0.6 0.12 185;
+    --chart-2: 0.38 0.13 264;
+    --chart-3: 0.7 0.15 155;
+    --chart-4: 0.75 0.12 80;
+    --chart-5: 0.65 0.16 30;
+
+    /* Sidebar */
+    --sidebar: 0.15 0.04 230;
+    --sidebar-foreground: 0.97 0 0;
+    --sidebar-primary: 0.6 0.12 185;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.22 0.05 230;
+    --sidebar-accent-foreground: 0.97 0 0;
+    --sidebar-border: 0.25 0.04 230;
+    --sidebar-ring: 0.6 0.12 185;
+
+    /* Custom brand tokens */
+    --teal-deep: 0.48 0.12 185;
+    --teal-bright: 0.72 0.14 185;
+    --navy: 0.28 0.1 260;
+    --gold: 0.78 0.14 80;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Cabinet Grotesk", "Figtree", "Outfit", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Bricolage Grotesque", "Playfair Display", "Cabinet Grotesk", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-teal {
+    background: linear-gradient(135deg,
+      oklch(0.48 0.12 185) 0%,
+      oklch(0.38 0.13 264) 100%
+    );
+  }
+
+  .gradient-teal-light {
+    background: linear-gradient(135deg,
+      oklch(0.94 0.04 185) 0%,
+      oklch(0.91 0.05 210) 100%
+    );
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg,
+      oklch(0.15 0.05 230) 0%,
+      oklch(0.25 0.08 200) 40%,
+      oklch(0.38 0.1 185) 100%
+    );
+  }
+
+  .text-gradient-teal {
+    background: linear-gradient(135deg,
+      oklch(0.65 0.14 185) 0%,
+      oklch(0.55 0.13 200) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px oklch(0.15 0.05 185 / 0.15);
+  }
+
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+  }
+
+  .btn-whatsapp:hover {
+    background: #1ebe5d;
+  }
+}
