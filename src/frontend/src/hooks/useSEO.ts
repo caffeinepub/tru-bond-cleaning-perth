@@ -3,21 +3,27 @@ import { useEffect } from "react";
 interface SEOProps {
   title: string;
   description: string;
+  keywords?: string;
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: string;
   canonical?: string;
+  robots?: string;
 }
 
 export function useSEO({
   title,
   description,
+  keywords,
   ogTitle,
   ogDescription,
   ogImage,
+  ogImageAlt,
   ogType = "website",
   canonical,
+  robots = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
 }: SEOProps) {
   useEffect(() => {
     // Title
@@ -39,7 +45,29 @@ export function useSEO({
       el.setAttribute("content", content);
     }
 
+    // Helper to set or create link tag
+    function setLink(rel: string, href: string) {
+      let el = document.querySelector(
+        `link[rel="${rel}"]`,
+      ) as HTMLLinkElement | null;
+      if (!el) {
+        el = document.createElement("link");
+        el.setAttribute("rel", rel);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("href", href);
+    }
+
+    // Core
     setMeta('meta[name="description"]', "name", "description", description);
+    setMeta('meta[name="robots"]', "name", "robots", robots);
+    setMeta('meta[name="googlebot"]', "name", "googlebot", robots);
+
+    if (keywords) {
+      setMeta('meta[name="keywords"]', "name", "keywords", keywords);
+    }
+
+    // Open Graph
     setMeta(
       'meta[property="og:title"]',
       "property",
@@ -53,6 +81,20 @@ export function useSEO({
       ogDescription ?? description,
     );
     setMeta('meta[property="og:type"]', "property", "og:type", ogType);
+
+    if (ogImage) {
+      setMeta('meta[property="og:image"]', "property", "og:image", ogImage);
+      if (ogImageAlt) {
+        setMeta(
+          'meta[property="og:image:alt"]',
+          "property",
+          "og:image:alt",
+          ogImageAlt,
+        );
+      }
+    }
+
+    // Twitter Card
     setMeta(
       'meta[name="twitter:card"]',
       "name",
@@ -73,20 +115,31 @@ export function useSEO({
     );
 
     if (ogImage) {
-      setMeta('meta[property="og:image"]', "property", "og:image", ogImage);
       setMeta('meta[name="twitter:image"]', "name", "twitter:image", ogImage);
+      if (ogImageAlt) {
+        setMeta(
+          'meta[name="twitter:image:alt"]',
+          "name",
+          "twitter:image:alt",
+          ogImageAlt,
+        );
+      }
     }
 
+    // Canonical
     if (canonical) {
-      let link = document.querySelector(
-        'link[rel="canonical"]',
-      ) as HTMLLinkElement | null;
-      if (!link) {
-        link = document.createElement("link");
-        link.setAttribute("rel", "canonical");
-        document.head.appendChild(link);
-      }
-      link.setAttribute("href", canonical);
+      setLink("canonical", canonical);
     }
-  }, [title, description, ogTitle, ogDescription, ogImage, ogType, canonical]);
+  }, [
+    title,
+    description,
+    keywords,
+    ogTitle,
+    ogDescription,
+    ogImage,
+    ogImageAlt,
+    ogType,
+    canonical,
+    robots,
+  ]);
 }

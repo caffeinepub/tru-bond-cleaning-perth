@@ -207,6 +207,11 @@ export function ServicesPage() {
       "Bond Cleaning Services Perth | End of Lease, Carpet & Window Cleaning | Tru Bond Cleaning",
     description:
       "Full bond cleaning services in Perth: end of lease cleaning, carpet steam cleaning, window cleaning, oven cleaning, bathroom cleaning & wall washing. Book today.",
+    keywords:
+      "bond cleaning services Perth, end of lease cleaning Perth, carpet steam cleaning Perth, window cleaning Perth, oven cleaning Perth, bathroom cleaning Perth, wall washing Perth, professional bond cleaners WA",
+    ogImage: "/assets/generated/end-of-lease-cleaning-perth.dim_800x500.jpg",
+    ogImageAlt:
+      "Professional bond cleaning services in Perth — end of lease, carpet, window and oven cleaning by Tru Bond Cleaning",
     canonical: "https://trubondcleaningbrisbane.com/services",
   });
 

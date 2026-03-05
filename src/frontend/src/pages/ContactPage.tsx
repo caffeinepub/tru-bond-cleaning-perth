@@ -93,6 +93,11 @@ export function ContactPage() {
     title: "Get a Free Bond Cleaning Quote in Perth | Tru Bond Cleaning",
     description:
       "Book your bond clean in Perth today. Free no-obligation quotes. Message us on WhatsApp 0488 841 883 or fill in our online form. 7-day availability.",
+    keywords:
+      "bond cleaning quote Perth, book bond clean Perth, free bond cleaning quote Perth WA, contact bond cleaners Perth, WhatsApp bond cleaning Perth, online bond cleaning booking Perth",
+    ogImage: "/assets/generated/hero-bond-cleaning-perth.dim_1200x600.jpg",
+    ogImageAlt:
+      "Contact Tru Bond Cleaning Perth — get a free bond cleaning quote today",
     canonical: "https://trubondcleaningbrisbane.com/contact",
   });
 

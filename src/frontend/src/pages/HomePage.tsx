@@ -445,7 +445,11 @@ export function HomePage() {
     title: "Bond Cleaning Perth | 100% Bond Back Guarantee | Tru Bond Cleaning",
     description:
       "Perth's most trusted bond cleaning service. 100% Bond Back Guarantee. End of lease cleaning, carpet cleaning & more. Free quote — call or WhatsApp 0488 841 883.",
+    keywords:
+      "bond cleaning Perth, end of lease cleaning Perth, bond clean Perth, professional bond cleaners Perth WA, move out cleaning Perth, bond back guarantee Perth, cheap bond cleaning Perth, bond cleaning near me Perth",
     ogImage: "/assets/generated/hero-bond-cleaning-perth.dim_1200x600.jpg",
+    ogImageAlt:
+      "Tru Bond Cleaning Perth — professional end of lease cleaning team at work",
     canonical: "https://trubondcleaningbrisbane.com",
   });
 

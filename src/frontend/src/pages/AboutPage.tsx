@@ -50,6 +50,11 @@ export function AboutPage() {
     title: "About Tru Bond Cleaning Perth | Local Bond Cleaners You Can Trust",
     description:
       "Learn about Tru Bond Cleaning Perth — locally owned, fully insured, police-checked bond cleaners. We follow the REIWA checklist and guarantee your bond back.",
+    keywords:
+      "about Tru Bond Cleaning Perth, local bond cleaners Perth, trusted bond cleaning company Perth WA, insured bond cleaners Perth, REIWA bond clean checklist, reliable bond cleaning Perth",
+    ogImage: "/assets/generated/about-team-bond-cleaning-perth.dim_800x500.jpg",
+    ogImageAlt:
+      "Tru Bond Cleaning Perth team — trusted local bond cleaners in Western Australia",
     canonical: "https://trubondcleaningbrisbane.com/about",
   });
 
